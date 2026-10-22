@@ -1,0 +1,196 @@
+/* Variables inspiradas en el Logo de IronMan Gym */
+:root {
+    --bg-dark: #080808;
+    --bg-card: #151515;
+    --text-light: #ffffff;
+    --neon-green: #39ff14;
+    --neon-hover: #2ee60d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+/* --- NAVEGACIÓN --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--neon-green);
+}
+
+.logo-container { display: flex; align-items: center; }
+
+.logo-img {
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--neon-green);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+.social-menu { display: flex; align-items: center; gap: 15px; }
+
+.social-icon { color: white; font-size: 20px; transition: color 0.3s; }
+.social-icon:hover { color: var(--neon-green); }
+
+/* --- BOTONES --- */
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-primary { background-color: var(--neon-green); color: #000; }
+.btn-primary:hover {
+    background-color: var(--neon-hover);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+}
+
+.btn-outline { background-color: transparent; color: var(--neon-green); border: 2px solid var(--neon-green); }
+.btn-outline:hover { background-color: var(--neon-green); color: #000; }
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop') center/cover;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+.hero p { font-size: 1.2rem; margin-bottom: 30px; color: #ccc; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* --- QUIÉNES SOMOS --- */
+.about-section { padding: 80px 20px; text-align: center; background-color: #000; }
+.about-section h2 { font-size: 2.5rem; color: var(--neon-green); margin-bottom: 20px; }
+.about-content p { max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; color: #ddd; }
+
+/* --- PLANES --- */
+.pricing-section { padding: 80px 20px; text-align: center; background-color: var(--bg-dark); }
+.pricing-section h2 { font-size: 2.5rem; margin-bottom: 10px; color: var(--neon-green); }
+.pricing-section p { color: #aaa; margin-bottom: 50px; }
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background-color: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 30px 20px;
+    transition: transform 0.3s, border-color 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-card:hover { transform: translateY(-5px); border-color: var(--neon-green); box-shadow: 0 5px 15px rgba(57, 255, 20, 0.1); }
+.pricing-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; }
+.price { font-size: 2rem; color: var(--neon-green); margin-bottom: 25px; }
+.pricing-card.featured, .pricing-card.student { border-color: var(--neon-green); }
+
+.badge, .badge-student {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background-color: var(--neon-green); color: #000; padding: 5px 15px;
+    border-radius: 20px; font-size: 0.8rem; font-weight: bold; white-space: nowrap;
+}
+.badge-student { background-color: #ff9800; color: white; }
+
+/* --- ENTRENADORES --- */
+.trainers-section { padding: 80px 20px; background-color: #000; text-align: center; }
+.trainers-section h2 { font-size: 2.5rem; color: var(--neon-green); margin-bottom: 10px; }
+.trainers-section p { color: #aaa; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+
+.trainers-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.trainer-card { background-color: var(--bg-card); padding: 30px; border-radius: 8px; width: 300px; border: 1px solid #333; }
+.trainer-icon { font-size: 40px; color: var(--neon-green); margin-bottom: 20px; }
+.trainer-card h3 { font-size: 1.5rem; margin-bottom: 15px; text-transform: uppercase; }
+.trainer-card p { color: #ccc; line-height: 1.5; }
+
+/* --- CONTACTO / UBICACIÓN --- */
+.location-section { display: flex; flex-wrap: wrap; padding: 80px 50px; background-color: var(--bg-dark); gap: 40px; align-items: center; }
+.location-info { flex: 1; min-width: 300px; }
+.location-info h2 { color: var(--neon-green); margin-bottom: 10px; font-size: 2.5rem; }
+.location-info h3 { font-size: 1.5rem; margin-bottom: 20px; }
+.location-info p { margin-bottom: 10px; color: #ccc; line-height: 1.6; }
+.footer-socials { display: flex; gap: 20px; margin-top: 15px; }
+.footer-socials a { color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 8px; transition: color 0.3s; }
+.footer-socials a:hover { color: var(--neon-green); }
+.location-map { flex: 1.5; min-width: 300px; }
+
+/* --- MODALES --- */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 200;
+}
+.modal-content {
+    background: var(--bg-card); padding: 40px; border-radius: 8px; border: 1px solid var(--neon-green);
+    width: 90%; max-width: 400px; position: relative; text-align: center; box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+}
+.close-btn { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #aaa; }
+.close-btn:hover { color: white; }
+.form-group { margin-bottom: 15px; text-align: left; }
+.form-group label { display: block; margin-bottom: 5px; color: #ccc; font-size: 14px; }
+.form-group input { width: 100%; padding: 12px; border: 1px solid #333; border-radius: 4px; background: #0a0a0a; color: white; }
+.form-group input:focus { outline: none; border-color: var(--neon-green); }
+#plan-seleccionado-txt { color: var(--neon-green); font-weight: bold; font-size: 1.2rem; margin-bottom: 20px; display: block; }
+.success-icon { font-size: 50px; color: var(--neon-green); margin-bottom: 15px; }
+
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; }
+}
